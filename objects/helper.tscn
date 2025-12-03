@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://tgogmfrtj7aq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_yo1dc"]
+
+[sub_resource type="GDScript" id="GDScript_yo1dc"]
+resource_name = "helper"
+script/source = "extends MeshInstance3D
+
+const objs = {
+	Globals.HelperType.CROSS: preload(\"res://assets/cross.obj\"),
+	Globals.HelperType.POINT: preload(\"res://assets/point.obj\"),
+	Globals.HelperType.ARROW_UP: preload(\"res://assets/arrow.obj\"),
+	Globals.HelperType.ARROW_DOWN: preload(\"res://assets/arrow.obj\"),
+	Globals.HelperType.ARROW_LEFT: preload(\"res://assets/arrow.obj\"),
+	Globals.HelperType.ARROW_RIGHT: preload(\"res://assets/arrow.obj\")
+}
+@export var type: Globals.HelperType
+@export var color: Color = Color(1.0, 1.0, 1.0, 1.0)
+var time = 0
+
+func _ready() -> void:
+	mesh = objs[type]
+	if type == Globals.HelperType.ARROW_UP:
+		rotation_degrees.z = 180
+	if type == Globals.HelperType.ARROW_LEFT:
+		rotation_degrees.z = 90
+	if type == Globals.HelperType.ARROW_RIGHT:
+		rotation_degrees.z = -90
+	material_override = StandardMaterial3D.new()
+	material_override.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	material_override.albedo_color = color
+
+func _process(delta: float) -> void:
+	time += delta
+	var s = 1.0 + sin(time * 7) * 0.2
+	scale = Vector3(s, s, s)
+"
+
+[node name="Helper" type="MeshInstance3D"]
+cast_shadow = 0
+mesh = SubResource("BoxMesh_yo1dc")
+script = SubResource("GDScript_yo1dc")
+type = null
+color = null

@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://bu6lehktk8qox"]
+
+[ext_resource type="ArrayMesh" uid="uid://2h5albcxbthh" path="res://assets/orb.obj" id="1_j0s63"]
+
+[sub_resource type="GDScript" id="GDScript_ch4u6"]
+script/source = "extends Area3D
+
+@export var type: Globals.OrbType
+const colors = {
+	Globals.OrbType.JUMP: Color(1.0, 1.0, 0.0, 0.3),
+	Globals.OrbType.JUMP_SIDE: Color(1.0, 0.0, 1.0, 0.302),
+}
+
+func _ready() -> void:
+	$Mesh.material_override = $Mesh.material_override.duplicate()
+	$Mesh.material_override.albedo_color = colors[type]
+
+func jump():
+	var tween = create_tween()
+	tween.set_parallel()
+	tween.tween_property($Mesh, \"scale\", Vector3(2, 2, 2), 0.1)
+	tween.tween_property($Mesh.material_override, \"albedo_color:a\", 0.7, 0.1)
+	tween.tween_property($Mesh.material_override, \"albedo_color:a\", 0.3, 0.1).set_delay(0.1)
+	tween.tween_property($Mesh, \"scale\", Vector3(1, 1, 1), 0.1).set_delay(0.1)
+"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j0s63"]
+transparency = 1
+disable_receive_shadows = true
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_j0s63"]
+height = 0.9
+radius = 0.6
+
+[node name="Orb" type="Area3D"]
+collision_layer = 16
+monitoring = false
+script = SubResource("GDScript_ch4u6")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_j0s63")
+mesh = ExtResource("1_j0s63")
+
+[node name="Shape" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 1.7763568e-15, 2.9802322e-08)
+shape = SubResource("CylinderShape3D_j0s63")

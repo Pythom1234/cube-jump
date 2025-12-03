@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://2h5albcxbthh"
+path="res://.godot/imported/orb.obj-008e4f8c53e8f612c3d17719d4175e8b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/orb.obj-008e4f8c53e8f612c3d17719d4175e8b.mesh"]
+
+source_file="res://assets/orb.obj"
+dest_files=["res://.godot/imported/orb.obj-008e4f8c53e8f612c3d17719d4175e8b.mesh", "res://.godot/imported/orb.obj-008e4f8c53e8f612c3d17719d4175e8b.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

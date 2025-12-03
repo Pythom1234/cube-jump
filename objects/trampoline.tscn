@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccn1atcnvu62m"]
+
+[ext_resource type="ArrayMesh" uid="uid://bdl7mvvobosug" path="res://assets/trampoline.obj" id="1_n1fg0"]
+
+[sub_resource type="GDScript" id="GDScript_ch4u6"]
+script/source = "extends Area3D
+
+@export var type: Globals.TrampolineType
+const colors = {
+	Globals.TrampolineType.JUMP: Color(1.0, 1.0, 0.0, 1.0),
+}
+
+func _ready() -> void:
+	$Mesh.material_override = $Mesh.material_override.duplicate()
+	$Mesh.material_override.albedo_color = colors[type]
+
+func jump():
+	var tween = create_tween()
+	tween.tween_property($Mesh, \"scale\", Vector3(1.3, 1, 1.3), 0.1)
+	tween.tween_property($Mesh, \"scale\", Vector3(1, 1, 1), 0.1)
+"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j0s63"]
+transparency = 1
+disable_receive_shadows = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dqeiu"]
+size = Vector3(0.99, 0.99, 0.1)
+
+[node name="Trampoline" type="Area3D"]
+collision_layer = 32
+monitoring = false
+script = SubResource("GDScript_ch4u6")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_j0s63")
+mesh = ExtResource("1_n1fg0")
+
+[node name="Shape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -0.45, 4.9472447e-08)
+shape = SubResource("BoxShape3D_dqeiu")
