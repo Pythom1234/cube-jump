@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://lwo2ydrj3leu"]
+
+[ext_resource type="ArrayMesh" uid="uid://b5qcxrc1ep6at" path="res://assets/portal.obj" id="1_ch4u6"]
+
+[sub_resource type="GDScript" id="GDScript_ch4u6"]
+script/source = "extends Area3D
+
+@export var type: Globals.PlayerType
+const colors = {
+	Globals.PlayerType.CUBE: Color(0.0, 1.0, 0.0, 1.0),
+	Globals.PlayerType.PLANE: Color(1.0, 0.0, 1.0, 1.0)
+}
+
+func _ready() -> void:
+	$Mesh.material_override = $Mesh.material_override.duplicate()
+	$Mesh.material_override.albedo_color = colors[type]
+"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ch4u6"]
+disable_receive_shadows = true
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ch4u6"]
+height = 0.40000004
+radius = 1.1
+
+[node name="Portal" type="Area3D"]
+collision_layer = 8
+monitoring = false
+script = SubResource("GDScript_ch4u6")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_ch4u6")
+mesh = ExtResource("1_ch4u6")
+
+[node name="Shape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.7763568e-15, 2.9802322e-08)
+shape = SubResource("CylinderShape3D_ch4u6")

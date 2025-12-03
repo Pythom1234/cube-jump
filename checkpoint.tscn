@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmq5jbmoq05oq"]
+
+[ext_resource type="ArrayMesh" uid="uid://dp0uyndj58kou" path="res://assets/checkpoint.obj" id="1_luqgl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r6hke"]
+albedo_color = Color(0.23146057, 0.76953125, 0.23146057, 1)
+
+[node name="Checkpoint" type="MeshInstance3D"]
+material_override = SubResource("StandardMaterial3D_r6hke")
+mesh = ExtResource("1_luqgl")

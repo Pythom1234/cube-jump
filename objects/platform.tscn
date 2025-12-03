@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cl44c75qxslrf"]
+
+[ext_resource type="Texture2D" uid="uid://brkup6ow4c3ro" path="res://assets/block.png" id="1_y5dbh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_of8b0"]
+albedo_texture = ExtResource("1_y5dbh")
+uv1_offset = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+stencil_flags = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_of8b0"]
+material = SubResource("StandardMaterial3D_of8b0")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_64b0s"]
+
+[node name="Platform" type="StaticBody3D"]
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_of8b0")
+
+[node name="Shape" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_64b0s")

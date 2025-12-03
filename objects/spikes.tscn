@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dr7pesop0a8lt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_of8b0"]
+albedo_color = Color(1, 0, 0, 1)
+texture_filter = 0
+stencil_flags = 2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_es5qw"]
+material = SubResource("StandardMaterial3D_of8b0")
+top_radius = 0.0
+height = 1.0
+
+[sub_resource type="HeightMapShape3D" id="HeightMapShape3D_mg372"]
+map_width = 3
+map_depth = 3
+map_data = PackedFloat32Array(0, 0, 0, 0, 2, 0, 0, 0, 0)
+
+[node name="Spikes" type="StaticBody3D"]
+collision_layer = 4
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_es5qw")
+
+[node name="Shape" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, -0.5, 0)
+shape = SubResource("HeightMapShape3D_mg372")

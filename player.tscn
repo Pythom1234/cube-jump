@@ -1,0 +1,477 @@
+[gd_scene load_steps=36 format=3 uid="uid://efungjy0pog3"]
+
+[ext_resource type="Script" uid="uid://6ala5c8ivet4" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="ArrayMesh" uid="uid://wcjctcdwo05x" path="res://assets/cube.obj" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://df0q6xedgvyjf" path="res://assets/star.png" id="3_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://u414hsd0h045" path="res://assets/play.png" id="3_hqtel"]
+[ext_resource type="Texture2D" uid="uid://s037t7nywq2s" path="res://assets/pause.png" id="3_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://c40yu0lqodr6f" path="res://assets/menuList.png" id="5_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://i8r6kfe46xki" path="res://assets/return.png" id="6_dw050"]
+[ext_resource type="Texture2D" uid="uid://tep6gbx553c0" path="res://assets/star_crossed.png" id="7_1jxqw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sh265"]
+size = Vector3(0.99, 0.99, 0.99)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i3pqv"]
+albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_onrkg"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="Curve3D" id="Curve3D_onrkg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hqtel"]
+blend_mode = 4
+albedo_color = Color(1, 0, 0, 1)
+disable_receive_shadows = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_onrkg"]
+size = Vector3(0.9, 0.86, 0.01)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i3pqv"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_onrkg"]
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_box_extents = Vector3(0.2, 0.01, 0.01)
+direction = Vector3(0, 0.5, -1)
+spread = 120.0
+flatness = 1.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sweqy"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2hs0m"]
+material = SubResource("StandardMaterial3D_sweqy")
+size = Vector3(0.05, 0.05, 0.05)
+
+[sub_resource type="Gradient" id="Gradient_onrkg"]
+offsets = PackedFloat32Array(0.8674033, 0.8839779)
+colors = PackedColorArray(0, 1, 0, 1, 0, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_i3pqv"]
+gradient = SubResource("Gradient_onrkg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i3pqv"]
+emission_shape = 3
+emission_box_extents = Vector3(0.4, 0.4, 0.4)
+angle_min = -720.0
+angle_max = 720.0
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 3.0
+gravity = Vector3(0, -18, 0)
+linear_accel_min = 9.999997
+linear_accel_max = 9.999997
+color_initial_ramp = SubResource("GradientTexture1D_i3pqv")
+hue_variation_min = -2.2351742e-08
+hue_variation_max = -2.2351742e-08
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2hs0m"]
+vertex_color_use_as_albedo = true
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="PrismMesh" id="PrismMesh_1jxqw"]
+material = SubResource("StandardMaterial3D_2hs0m")
+size = Vector3(0.2, 0.2, 0.2)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i3pqv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sweqy"]
+bg_color = Color(0, 0, 0, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3pqv"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ivps1"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 0.6)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_urp6f"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 1, 0, 0.6)
+border_color = Color(0, 1, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="Theme" id="Theme_onrkg"]
+Button/styles/focus = SubResource("StyleBoxEmpty_i3pqv")
+Button/styles/hover = SubResource("StyleBoxFlat_sweqy")
+Button/styles/normal = SubResource("StyleBoxFlat_sweqy")
+Button/styles/pressed = SubResource("StyleBoxFlat_i3pqv")
+ProgressBar/font_sizes/font_size = 50
+ProgressBar/styles/background = SubResource("StyleBoxFlat_ivps1")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_urp6f")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dw050"]
+bg_color = Color(0, 0, 0, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_bottom_left = 16
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b26j0"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_bottom_left = 16
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n7ghd"]
+bg_color = Color(0, 0, 0, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_bottom_left = 16
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2hs0m"]
+bg_color = Color(0, 0, 0, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1jxqw"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nvl01"]
+bg_color = Color(0, 0, 0, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[node name="Player" type="CharacterBody3D"]
+collision_mask = 6
+script = ExtResource("1_4flbx")
+
+[node name="Shape" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_sh265")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_onrkg")
+surface_material_override/0 = SubResource("StandardMaterial3D_i3pqv")
+surface_material_override/1 = SubResource("StandardMaterial3D_onrkg")
+
+[node name="CameraOrigin" type="Node3D" parent="."]
+transform = Transform3D(-1.0000002, -1.11967346e-14, 8.742274e-08, 6.6969704e-08, 0.6427876, 0.76604414, -5.6194263e-08, 0.76604414, -0.6427876, 0, 0, 0)
+
+[node name="CameraArm" type="SpringArm3D" parent="CameraOrigin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+collision_mask = 6
+spring_length = 3.0
+
+[node name="Camera" type="Camera3D" parent="CameraOrigin/CameraArm"]
+transform = Transform3D(0.99999976, 2.0279252e-08, -2.384553e-09, -2.0279266e-08, 0.9727235, -0.23196918, -2.384617e-09, 0.23196924, 0.9727234, 0, 0, 0)
+
+[node name="Path" type="Path3D" parent="."]
+top_level = true
+visible = false
+curve = SubResource("Curve3D_onrkg")
+
+[node name="Polygon" type="CSGPolygon3D" parent="Path"]
+polygon = PackedVector2Array(-0.01, -0.01, -0.01, 0.01, 0.01, 0.01, 0.01, -0.01)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true
+material = SubResource("StandardMaterial3D_hqtel")
+
+[node name="BlockCollider" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="Shape" type="CollisionShape3D" parent="BlockCollider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9802322e-08, 0.02041012, 0.50061506)
+shape = SubResource("BoxShape3D_onrkg")
+
+[node name="Collider" type="Area3D" parent="."]
+collision_mask = 56
+monitorable = false
+
+[node name="Shape" type="CollisionShape3D" parent="Collider"]
+shape = SubResource("BoxShape3D_i3pqv")
+
+[node name="TrailParticles" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -0.5)
+amount = 50
+lifetime = 0.15000000000000002
+process_material = SubResource("ParticleProcessMaterial_onrkg")
+draw_pass_1 = SubResource("BoxMesh_2hs0m")
+
+[node name="DieParticles" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 70
+lifetime = 0.7
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_i3pqv")
+draw_pass_1 = SubResource("PrismMesh_1jxqw")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_onrkg")
+
+[node name="Container" type="HBoxContainer" parent="UI/UI"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left" type="Button" parent="UI/UI/Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+flat = true
+
+[node name="Right" type="Button" parent="UI/UI/Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+flat = true
+
+[node name="PausePanel" type="Panel" parent="UI/UI"]
+process_mode = 2
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="HBoxContainer" parent="UI/UI/PausePanel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="CheckPoint" type="Button" parent="UI/UI/PausePanel/Container"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_vertical = 4
+icon = ExtResource("3_2hs0m")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Play" type="Button" parent="UI/UI/PausePanel/Container"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+icon = ExtResource("3_hqtel")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Menu" type="Button" parent="UI/UI/PausePanel/Container"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_vertical = 4
+icon = ExtResource("5_1jxqw")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Restart" type="Button" parent="UI/UI/PausePanel/Container"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_vertical = 4
+icon = ExtResource("6_dw050")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Pause" type="Button" parent="UI/UI"]
+process_mode = 3
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -128.0
+offset_bottom = 128.0
+grow_horizontal = 0
+icon = ExtResource("3_i3pqv")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Progress" type="ProgressBar" parent="UI/UI"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_right = 300.0
+offset_bottom = 80.0
+grow_horizontal = 2
+
+[node name="CheckpointContainer" type="HBoxContainer" parent="UI/UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -102.0
+offset_top = -122.0
+offset_right = 102.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Add" type="Button" parent="UI/UI/CheckpointContainer"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_dw050")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_b26j0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n7ghd")
+icon = ExtResource("3_2hs0m")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Remove" type="Button" parent="UI/UI/CheckpointContainer"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_2hs0m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1jxqw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nvl01")
+icon = ExtResource("7_1jxqw")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="button_down" from="UI/UI/Container/Left" to="." method="left_down"]
+[connection signal="button_up" from="UI/UI/Container/Left" to="." method="left_up"]
+[connection signal="button_down" from="UI/UI/Container/Right" to="." method="right_down"]
+[connection signal="button_up" from="UI/UI/Container/Right" to="." method="right_up"]
+[connection signal="pressed" from="UI/UI/PausePanel/Container/CheckPoint" to="." method="practice_toggle"]
+[connection signal="pressed" from="UI/UI/PausePanel/Container/Play" to="." method="pause" binds= [false]]
+[connection signal="pressed" from="UI/UI/PausePanel/Container/Restart" to="." method="restart"]
+[connection signal="pressed" from="UI/UI/Pause" to="." method="pause"]
+[connection signal="pressed" from="UI/UI/CheckpointContainer/Add" to="." method="practice_add_checkpoint"]
+[connection signal="pressed" from="UI/UI/CheckpointContainer/Remove" to="." method="practice_remove_checkpoint"]
