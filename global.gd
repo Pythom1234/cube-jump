@@ -22,3 +22,17 @@ enum OrbType {
 enum TrampolineType {
 	JUMP
 }
+
+var config = ConfigFile.new()
+
+func _init() -> void:
+	if not FileAccess.file_exists("user://config.ini"):
+		config.save("user://config.ini")
+	config.load("user://config.ini")
+
+func sset(section, key, value):
+	config.set_value(section, key, value)
+	config.save("user://config.ini")
+
+func sget(section, key):
+	return config.get_value(section, key)

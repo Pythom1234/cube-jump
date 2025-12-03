@@ -1075,7 +1075,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, 293)
 
 [node name="Orb4" parent="." instance=ExtResource("5_ywbko")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2, 303)
-type = 1
 
 [node name="Orb5" parent="." instance=ExtResource("5_ywbko")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, 307)
