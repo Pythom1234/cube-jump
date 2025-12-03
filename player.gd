@@ -160,7 +160,7 @@ func _physics_process(delta: float) -> void:
 						velocity.y = 17
 						velocity.x = VELOCITY_X * turn
 						i.jump()
-						$Mesh.rotation_degrees.z = 0
+						#$Mesh.rotation_degrees.z = 0
 		if i.get_collision_layer_value(6):
 			if i.type == Globals.TrampolineType.JUMP:
 						velocity.y = 20
@@ -216,3 +216,6 @@ func restart() -> void:
 	$Mesh.rotation_degrees = Vector3(0, 0, 0)
 	set_type(Globals.PlayerType.CUBE)
 	pause(false)
+	checkpoints = []
+	for i in $"../Checkpoints".get_children():
+		i.queue_free()
