@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://c0cu16hik5a0a"]
+[gd_scene load_steps=3 format=3 uid="uid://c0cu16hik5a0a"]
+
+[ext_resource type="Theme" uid="uid://choxg7u1l2n6u" path="res://theme.theme" id="1_lti8b"]
+[ext_resource type="Script" uid="uid://c3ynic45nwuft" path="res://menu.gd" id="2_ouk20"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -7,3 +10,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_lti8b")
+script = ExtResource("2_ouk20")
+
+[node name="Levels" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="VBoxContainer" parent="Levels"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

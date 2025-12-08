@@ -1,14 +1,16 @@
 [gd_scene load_steps=5 format=3 uid="uid://lwo2ydrj3leu"]
 
-[ext_resource type="ArrayMesh" uid="uid://b5qcxrc1ep6at" path="res://assets/portal.obj" id="1_ch4u6"]
+[ext_resource type="ArrayMesh" uid="uid://bs3kp2rr863cq" path="res://assets/obj/portal.obj" id="1_ch4u6"]
 
 [sub_resource type="GDScript" id="GDScript_ch4u6"]
+resource_name = "portal"
 script/source = "extends Area3D
 
 @export var type: Globals.PlayerType
 const colors = {
 	Globals.PlayerType.CUBE: Color(0.0, 1.0, 0.0, 1.0),
-	Globals.PlayerType.PLANE: Color(1.0, 0.0, 1.0, 1.0)
+	Globals.PlayerType.PLANE: Color(1.0, 0.0, 1.0, 1.0),
+	Globals.PlayerType.SPIDER: Color(0.4, 0.0, 0.6, 1.0),
 }
 
 func _ready() -> void:

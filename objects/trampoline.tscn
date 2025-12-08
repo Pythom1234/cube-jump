@@ -1,13 +1,17 @@
 [gd_scene load_steps=5 format=3 uid="uid://ccn1atcnvu62m"]
 
-[ext_resource type="ArrayMesh" uid="uid://bdl7mvvobosug" path="res://assets/trampoline.obj" id="1_n1fg0"]
+[ext_resource type="ArrayMesh" uid="uid://qho5q22b1k8j" path="res://assets/obj/trampoline.obj" id="1_n1fg0"]
 
 [sub_resource type="GDScript" id="GDScript_ch4u6"]
+resource_name = "trampoline"
 script/source = "extends Area3D
 
 @export var type: Globals.TrampolineType
 const colors = {
 	Globals.TrampolineType.JUMP: Color(1.0, 1.0, 0.0, 1.0),
+	Globals.TrampolineType.JUMP_LEFT: Color(1.0, 0.0, 1.0, 1.0),
+	Globals.TrampolineType.JUMP_RIGHT: Color(1.0, 0.0, 1.0, 1.0),
+	Globals.TrampolineType.GRAVITY: Color(0.0, 0.7, 1.0, 1.0),
 }
 
 func _ready() -> void:
@@ -28,7 +32,7 @@ disable_receive_shadows = true
 size = Vector3(0.99, 0.99, 0.1)
 
 [node name="Trampoline" type="Area3D"]
-collision_layer = 32
+collision_layer = 32800
 monitoring = false
 script = SubResource("GDScript_ch4u6")
 

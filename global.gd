@@ -1,8 +1,9 @@
-class_name Globals
+extends Node
 
 enum PlayerType {
 	CUBE,
-	PLANE
+	PLANE, # TODO
+	SPIDER,
 }
 
 enum HelperType {
@@ -11,18 +12,27 @@ enum HelperType {
 	ARROW_UP,
 	ARROW_DOWN,
 	ARROW_LEFT,
-	ARROW_RIGHT
+	ARROW_RIGHT,
 }
 
 enum OrbType {
 	JUMP,
-	JUMP_SIDE
+	JUMP_BIG,
+	JUMP_SIDE,
+	GRAVITY,
 }
 
 enum TrampolineType {
-	JUMP
+	JUMP,
+	JUMP_LEFT,
+	JUMP_RIGHT,
+	GRAVITY,
 }
 
+const levels: = {
+	"01": preload("res://levels/01.tscn"),
+}
+var level = "01"
 var config = ConfigFile.new()
 
 func _init() -> void:

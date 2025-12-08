@@ -1,14 +1,17 @@
 [gd_scene load_steps=5 format=3 uid="uid://bu6lehktk8qox"]
 
-[ext_resource type="ArrayMesh" uid="uid://2h5albcxbthh" path="res://assets/orb.obj" id="1_j0s63"]
+[ext_resource type="ArrayMesh" uid="uid://rf13mxrnw4pt" path="res://assets/obj/orb.obj" id="1_j0s63"]
 
 [sub_resource type="GDScript" id="GDScript_ch4u6"]
+resource_name = "orb"
 script/source = "extends Area3D
 
 @export var type: Globals.OrbType
 const colors = {
 	Globals.OrbType.JUMP: Color(1.0, 1.0, 0.0, 0.3),
-	Globals.OrbType.JUMP_SIDE: Color(1.0, 0.0, 1.0, 0.302),
+	Globals.OrbType.JUMP_BIG: Color(1.0, 0.0, 0.0, 0.3),
+	Globals.OrbType.JUMP_SIDE: Color(1.0, 0.0, 1.0, 0.3),
+	Globals.OrbType.GRAVITY: Color(0.0, 0.7, 1.0, 0.3),
 }
 
 func _ready() -> void:

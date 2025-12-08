@@ -7,12 +7,12 @@ resource_name = "helper"
 script/source = "extends MeshInstance3D
 
 const objs = {
-	Globals.HelperType.CROSS: preload(\"res://assets/cross.obj\"),
-	Globals.HelperType.POINT: preload(\"res://assets/point.obj\"),
-	Globals.HelperType.ARROW_UP: preload(\"res://assets/arrow.obj\"),
-	Globals.HelperType.ARROW_DOWN: preload(\"res://assets/arrow.obj\"),
-	Globals.HelperType.ARROW_LEFT: preload(\"res://assets/arrow.obj\"),
-	Globals.HelperType.ARROW_RIGHT: preload(\"res://assets/arrow.obj\")
+	Globals.HelperType.CROSS: preload(\"res://assets/obj/cross.obj\"),
+	Globals.HelperType.POINT: preload(\"res://assets/obj/point.obj\"),
+	Globals.HelperType.ARROW_UP: preload(\"res://assets/obj/arrow.obj\"),
+	Globals.HelperType.ARROW_DOWN: preload(\"res://assets/obj/arrow.obj\"),
+	Globals.HelperType.ARROW_LEFT: preload(\"res://assets/obj/arrow.obj\"),
+	Globals.HelperType.ARROW_RIGHT: preload(\"res://assets/obj/arrow.obj\")
 }
 @export var type: Globals.HelperType
 @export var color: Color = Color(1.0, 1.0, 1.0, 1.0)
@@ -40,5 +40,3 @@ func _process(delta: float) -> void:
 cast_shadow = 0
 mesh = SubResource("BoxMesh_yo1dc")
 script = SubResource("GDScript_yo1dc")
-type = null
-color = null

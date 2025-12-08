@@ -11,13 +11,21 @@ config_version=5
 [application]
 
 config/name="Cube Jump"
-run/main_scene="uid://cfj06i17peatc"
+run/main_scene="uid://c0cu16hik5a0a"
 run/print_header=false
 config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 boot_splash/fullsize=false
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout=""
+
+[autoload]
+
+Globals="*res://global.gd"
 
 [display]
 
@@ -29,11 +37,18 @@ window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_height"
 window/handheld/orientation=6
 
+[editor]
+
+movie_writer/video_quality=1.0
+movie_writer/movie_file="/home/tom/programovani/godot/cube-jump/test.avi"
+
 [file_customization]
 
 folder_colors={
 "res://assets/": "yellow",
-"res://levels/": "red",
+"res://assets/images/": "orange",
+"res://assets/obj/": "red",
+"res://levels/": "blue",
 "res://objects/": "green"
 }
 
@@ -63,6 +78,12 @@ right={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194321,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
+pause={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":80,"key_label":0,"unicode":112,"location":0,"echo":false,"script":null)
+]
+}
 
 [layer_names]
 
@@ -72,6 +93,7 @@ right={
 3d_physics/layer_4="portal"
 3d_physics/layer_5="orb"
 3d_physics/layer_6="trampoline"
+3d_physics/layer_16="camera_stopping"
 
 [rendering]
 

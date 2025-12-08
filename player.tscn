@@ -1,34 +1,18 @@
-[gd_scene load_steps=36 format=3 uid="uid://efungjy0pog3"]
+[gd_scene load_steps=31 format=3 uid="uid://efungjy0pog3"]
 
 [ext_resource type="Script" uid="uid://6ala5c8ivet4" path="res://player.gd" id="1_4flbx"]
-[ext_resource type="ArrayMesh" uid="uid://wcjctcdwo05x" path="res://assets/cube.obj" id="2_onrkg"]
-[ext_resource type="Texture2D" uid="uid://df0q6xedgvyjf" path="res://assets/star.png" id="3_2hs0m"]
-[ext_resource type="Texture2D" uid="uid://u414hsd0h045" path="res://assets/play.png" id="3_hqtel"]
-[ext_resource type="Texture2D" uid="uid://s037t7nywq2s" path="res://assets/pause.png" id="3_i3pqv"]
-[ext_resource type="Texture2D" uid="uid://c40yu0lqodr6f" path="res://assets/menuList.png" id="5_1jxqw"]
-[ext_resource type="Texture2D" uid="uid://i8r6kfe46xki" path="res://assets/return.png" id="6_dw050"]
-[ext_resource type="Texture2D" uid="uid://tep6gbx553c0" path="res://assets/star_crossed.png" id="7_1jxqw"]
+[ext_resource type="PackedScene" uid="uid://dsoco8tlsk24o" path="res://assets/obj/cube.glb" id="2_b26j0"]
+[ext_resource type="Texture2D" uid="uid://df0q6xedgvyjf" path="res://assets/images/star.png" id="3_2hs0m"]
+[ext_resource type="Theme" uid="uid://choxg7u1l2n6u" path="res://theme.theme" id="3_b26j0"]
+[ext_resource type="Texture2D" uid="uid://u414hsd0h045" path="res://assets/images/play.png" id="3_hqtel"]
+[ext_resource type="Texture2D" uid="uid://s037t7nywq2s" path="res://assets/images/pause.png" id="3_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://c40yu0lqodr6f" path="res://assets/images/menuList.png" id="5_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://i8r6kfe46xki" path="res://assets/images/return.png" id="6_dw050"]
+[ext_resource type="Texture2D" uid="uid://tep6gbx553c0" path="res://assets/images/star_crossed.png" id="7_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://bf07ui6hn41c8" path="res://assets/images/return_star.png" id="8_n7ghd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sh265"]
 size = Vector3(0.99, 0.99, 0.99)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i3pqv"]
-albedo_color = Color(0, 1, 1, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_onrkg"]
-albedo_color = Color(0, 1, 0, 1)
-
-[sub_resource type="Curve3D" id="Curve3D_onrkg"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hqtel"]
-blend_mode = 4
-albedo_color = Color(1, 0, 0, 1)
-disable_receive_shadows = true
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_onrkg"]
-size = Vector3(0.9, 0.86, 0.01)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_i3pqv"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_onrkg"]
 lifetime_randomness = 1.0
@@ -46,6 +30,14 @@ albedo_color = Color(0, 1, 0, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_2hs0m"]
 material = SubResource("StandardMaterial3D_sweqy")
 size = Vector3(0.05, 0.05, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b26j0"]
+size = Vector3(0.9, 0.1, 0.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_onrkg"]
+size = Vector3(0.9, 0.86, 0.01)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i3pqv"]
 
 [sub_resource type="Gradient" id="Gradient_onrkg"]
 offsets = PackedFloat32Array(0.8674033, 0.8839779)
@@ -81,78 +73,11 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_2hs0m")
 size = Vector3(0.2, 0.2, 0.2)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i3pqv"]
+[sub_resource type="InputEventAction" id="InputEventAction_dw050"]
+action = &"pause"
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sweqy"]
-bg_color = Color(0, 0, 0, 0.6)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-expand_margin_left = 1.0
-expand_margin_top = 1.0
-expand_margin_right = 1.0
-expand_margin_bottom = 1.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3pqv"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-expand_margin_left = 1.0
-expand_margin_top = 1.0
-expand_margin_right = 1.0
-expand_margin_bottom = 1.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ivps1"]
-content_margin_left = 2.0
-content_margin_top = 2.0
-content_margin_right = 2.0
-content_margin_bottom = 2.0
-bg_color = Color(0, 0, 0, 0.6)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 6
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_urp6f"]
-content_margin_left = 2.0
-content_margin_top = 2.0
-content_margin_right = 2.0
-content_margin_bottom = 2.0
-bg_color = Color(0, 1, 0, 0.6)
-border_color = Color(0, 1, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 6
-
-[sub_resource type="Theme" id="Theme_onrkg"]
-Button/styles/focus = SubResource("StyleBoxEmpty_i3pqv")
-Button/styles/hover = SubResource("StyleBoxFlat_sweqy")
-Button/styles/normal = SubResource("StyleBoxFlat_sweqy")
-Button/styles/pressed = SubResource("StyleBoxFlat_i3pqv")
-ProgressBar/font_sizes/font_size = 50
-ProgressBar/styles/background = SubResource("StyleBoxFlat_ivps1")
-ProgressBar/styles/fill = SubResource("StyleBoxFlat_urp6f")
+[sub_resource type="Shortcut" id="Shortcut_b26j0"]
+events = [SubResource("InputEventAction_dw050")]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dw050"]
 bg_color = Color(0, 0, 0, 0.6)
@@ -245,45 +170,39 @@ script = ExtResource("1_4flbx")
 [node name="Shape" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_sh265")
 
-[node name="Mesh" type="MeshInstance3D" parent="."]
-mesh = ExtResource("2_onrkg")
-surface_material_override/0 = SubResource("StandardMaterial3D_i3pqv")
-surface_material_override/1 = SubResource("StandardMaterial3D_onrkg")
+[node name="Visible" type="Node3D" parent="."]
+
+[node name="TrailParticles" type="GPUParticles3D" parent="Visible"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -0.5)
+amount = 50
+lifetime = 0.15000000000000002
+process_material = SubResource("ParticleProcessMaterial_onrkg")
+draw_pass_1 = SubResource("BoxMesh_2hs0m")
+
+[node name="Model" type="Node3D" parent="Visible"]
+
+[node name="cube" parent="Visible/Model" instance=ExtResource("2_b26j0")]
+visible = false
 
 [node name="CameraOrigin" type="Node3D" parent="."]
-transform = Transform3D(-1.0000002, -1.11967346e-14, 8.742274e-08, 6.6969704e-08, 0.6427876, 0.76604414, -5.6194263e-08, 0.76604414, -0.6427876, 0, 0, 0)
+transform = Transform3D(-1.0000002, -1.1483157e-08, 9.705823e-08, 6.6969704e-08, 0.6427876, 0.76604414, -7.118448e-08, 0.76604414, -0.6427876, 0, 0, 0)
 
 [node name="CameraArm" type="SpringArm3D" parent="CameraOrigin"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
-collision_mask = 6
+collision_mask = 32768
 spring_length = 3.0
 
 [node name="Camera" type="Camera3D" parent="CameraOrigin/CameraArm"]
-transform = Transform3D(0.99999976, 2.0279252e-08, -2.384553e-09, -2.0279266e-08, 0.9727235, -0.23196918, -2.384617e-09, 0.23196924, 0.9727234, 0, 0, 0)
+transform = Transform3D(0.99999976, 0, 0, 0, 0.9743704, -0.22495112, 0, 0.22495113, 0.9743703, 0, 0, 0)
 
-[node name="Path" type="Path3D" parent="."]
-top_level = true
-visible = false
-curve = SubResource("Curve3D_onrkg")
-
-[node name="Polygon" type="CSGPolygon3D" parent="Path"]
-polygon = PackedVector2Array(-0.01, -0.01, -0.01, 0.01, 0.01, 0.01, 0.01, -0.01)
-mode = 2
-path_node = NodePath("..")
-path_interval_type = 0
-path_interval = 1.0
-path_simplify_angle = 0.0
-path_rotation = 2
-path_rotation_accurate = false
-path_local = false
-path_continuous_u = true
-path_u_distance = 1.0
-path_joined = false
-smooth_faces = true
-material = SubResource("StandardMaterial3D_hqtel")
+[node name="CameraCollider" type="ShapeCast3D" parent="CameraOrigin"]
+transform = Transform3D(1, -8.557505e-08, -1.0854136e-07, 1.08541364e-07, -8.940697e-08, 0.99999994, -8.557505e-08, -0.99999994, -8.940697e-08, 1.0269006e-07, 1.0728836e-07, 1.1999999)
+shape = SubResource("BoxShape3D_b26j0")
+target_position = Vector3(0, -100, 0)
+collision_mask = 32768
+collide_with_areas = true
 
 [node name="BlockCollider" type="Area3D" parent="."]
-collision_layer = 0
 collision_mask = 2
 
 [node name="Shape" type="CollisionShape3D" parent="BlockCollider"]
@@ -296,13 +215,6 @@ monitorable = false
 
 [node name="Shape" type="CollisionShape3D" parent="Collider"]
 shape = SubResource("BoxShape3D_i3pqv")
-
-[node name="TrailParticles" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -0.5)
-amount = 50
-lifetime = 0.15000000000000002
-process_material = SubResource("ParticleProcessMaterial_onrkg")
-draw_pass_1 = SubResource("BoxMesh_2hs0m")
 
 [node name="DieParticles" type="GPUParticles3D" parent="."]
 emitting = false
@@ -324,7 +236,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = SubResource("Theme_onrkg")
+theme = ExtResource("3_b26j0")
 
 [node name="Container" type="HBoxContainer" parent="UI/UI"]
 z_index = -1
@@ -359,7 +271,7 @@ offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Container" type="HBoxContainer" parent="UI/UI/PausePanel"]
+[node name="Container" type="VBoxContainer" parent="UI/UI/PausePanel"]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -369,10 +281,22 @@ offset_top = -150.0
 offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Play" type="Button" parent="UI/UI/PausePanel/Container"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+icon = ExtResource("3_hqtel")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Container" type="HBoxContainer" parent="UI/UI/PausePanel/Container"]
+layout_mode = 2
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="CheckPoint" type="Button" parent="UI/UI/PausePanel/Container"]
+[node name="CheckPoint" type="Button" parent="UI/UI/PausePanel/Container/Container"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_vertical = 4
@@ -380,14 +304,7 @@ icon = ExtResource("3_2hs0m")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Play" type="Button" parent="UI/UI/PausePanel/Container"]
-custom_minimum_size = Vector2(300, 300)
-layout_mode = 2
-icon = ExtResource("3_hqtel")
-icon_alignment = 1
-expand_icon = true
-
-[node name="Menu" type="Button" parent="UI/UI/PausePanel/Container"]
+[node name="Menu" type="Button" parent="UI/UI/PausePanel/Container/Container"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_vertical = 4
@@ -395,11 +312,20 @@ icon = ExtResource("5_1jxqw")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Restart" type="Button" parent="UI/UI/PausePanel/Container"]
+[node name="Restart" type="Button" parent="UI/UI/PausePanel/Container/Container"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_vertical = 4
 icon = ExtResource("6_dw050")
+icon_alignment = 1
+expand_icon = true
+
+[node name="RestartCheckpoint" type="Button" parent="UI/UI/PausePanel/Container/Container"]
+visible = false
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_vertical = 4
+icon = ExtResource("8_n7ghd")
 icon_alignment = 1
 expand_icon = true
 
@@ -413,6 +339,7 @@ anchor_right = 1.0
 offset_left = -128.0
 offset_bottom = 128.0
 grow_horizontal = 0
+shortcut = SubResource("Shortcut_b26j0")
 icon = ExtResource("3_i3pqv")
 icon_alignment = 1
 expand_icon = true
@@ -465,13 +392,20 @@ icon = ExtResource("7_1jxqw")
 icon_alignment = 1
 expand_icon = true
 
+[node name="PracticeTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
 [connection signal="button_down" from="UI/UI/Container/Left" to="." method="left_down"]
 [connection signal="button_up" from="UI/UI/Container/Left" to="." method="left_up"]
 [connection signal="button_down" from="UI/UI/Container/Right" to="." method="right_down"]
 [connection signal="button_up" from="UI/UI/Container/Right" to="." method="right_up"]
-[connection signal="pressed" from="UI/UI/PausePanel/Container/CheckPoint" to="." method="practice_toggle"]
 [connection signal="pressed" from="UI/UI/PausePanel/Container/Play" to="." method="pause" binds= [false]]
-[connection signal="pressed" from="UI/UI/PausePanel/Container/Restart" to="." method="restart"]
+[connection signal="pressed" from="UI/UI/PausePanel/Container/Container/CheckPoint" to="." method="practice_toggle"]
+[connection signal="pressed" from="UI/UI/PausePanel/Container/Container/Menu" to="." method="menu"]
+[connection signal="pressed" from="UI/UI/PausePanel/Container/Container/Restart" to="." method="restart" binds= [false]]
+[connection signal="pressed" from="UI/UI/PausePanel/Container/Container/RestartCheckpoint" to="." method="restart" binds= [true]]
 [connection signal="pressed" from="UI/UI/Pause" to="." method="pause"]
 [connection signal="pressed" from="UI/UI/CheckpointContainer/Add" to="." method="practice_add_checkpoint"]
 [connection signal="pressed" from="UI/UI/CheckpointContainer/Remove" to="." method="practice_remove_checkpoint"]
+[connection signal="timeout" from="PracticeTimer" to="." method="practice_timer"]
